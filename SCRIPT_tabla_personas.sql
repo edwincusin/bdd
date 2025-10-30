@@ -94,7 +94,23 @@ select * from personas
 where numero_hijos <>2
 
 
+--ACTUALIZAR CAMPOS -- SIEMPRE USAR EL WHERE--
+update personas set estatura = 1.70 -- no recomendable poque modificaria toda los registros
 
+update personas set estatura =1.70
+where cedula ='1753081051';
+
+update personas set estatura = 1.70
+where estatura is null;
+
+update personas set cantidad_ahorrada = 2000.00
+where cantidad_ahorrada < money(100);
+
+update personas set estatura=1.77, fecha_nacimiento = '2019/08/08'
+where cedula='1753081050';
+
+
+select * from personas
 
 
 
