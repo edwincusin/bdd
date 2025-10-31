@@ -115,8 +115,19 @@ where cedula='1753081050';
 delete from personas
 where cedula = '1753081051';
 
-select * from personas
+select * from personas;
 
+
+--OPERADOR AND Y OR --
+select  * from personas 
+where nombre='EDWIN' AND apellido='CUSIN'; 
+
+select * from personas 
+where nombre='EDWIN' or nombre='DANIELA';
+
+select * from personas 
+where (nombre='EDWIN' or nombre='DANIELA')
+and (numero_hijos is not null);
 
 
 
