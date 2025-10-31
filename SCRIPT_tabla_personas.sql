@@ -1,3 +1,4 @@
+
 --crear tabla personas--
 create table personas(
 	cedula char(10) not null,
@@ -109,6 +110,10 @@ where cantidad_ahorrada < money(100);
 update personas set estatura=1.77, fecha_nacimiento = '2019/08/08'
 where cedula='1753081050';
 
+
+--ELIMINAR REGISTROS -- SIEMPRE USAR WHERE--
+delete from personas
+where cedula = '1753081051';
 
 select * from personas
 
