@@ -129,5 +129,60 @@ select * from personas
 where (nombre='EDWIN' or nombre='DANIELA')
 and (numero_hijos is not null);
 
+-----------------------------------------------------------------------------------------------------------------
+--MODIFICACION TABLA
+delete from personas -- eliminar registros de la tabla
+alter table personas 
+add column estado_civil_codigo char(1) not null
+
+
+
+---CREAR TABLA DE ESTADO CIVIL 
+create table estado_civil(
+	codigo char (1)not null,
+	descripcion varchar(25) not null,
+	constraint estado_civil_pk primary key (codigo) 
+);
+
+--FORENKEY TABLA PERSONAS
+alter table personas 
+add constraint personas_estado_civil_fk -- nombre del forenkey (creamos nombre)
+foreign key (estado_civil_codigo) -- a que columna vamos aplicar de la tabla personas
+references estado_civil(codigo) -- reerecnia de la tabla que se relaciona y columna
+
+
+--
+insert into estado_civil(codigo, descripcion)
+values ('U', 'UNION LIBRE'),
+ 		('C', 'CASADO'),
+ 		('S', 'SOLTERO');
+
+select * from estado_civil
+delete from estado_civil -- probando srcipt 
+
+--
+insert into personas(cedula, nombre, apellido, estatura, fecha_nacimiento, hora_nacimiento, cantidad_ahorrada, numero_hijos, estado_civil_codigo)
+values ('1753081050', 'EDWIN', 'CUSIN', 1.70, '23/06/1997', '04:00', 5000.00, 1,'U'),
+		('1753081051', 'GEOVANY', 'ANTAMBA', 1.80, '14/02/1999', '17:00', 1000.00, 2,'C'),
+		('1753081052', 'DANIELA', 'CHIZA', 1.70, '15/07/1994', '09:00', 100.00, 3,'U'),
+		('1753081053', 'CARLA', 'CONEJO', 1.70, '03/11/2000', '12:00', 80.00, 2,'S'),
+		('1753081054', 'JOSE', 'CHASIN', 1.70, '08/12/2003', '05:00', 100.00,1,'S');
+
+
+
+select * from personas
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
