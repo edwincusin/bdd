@@ -174,7 +174,14 @@ select * from personas
 
 
 
+-----------HCER CONSULTAS TABLAS RELACIONADAS COMBINANDO TABLAS------------------
 
+
+select pe.cedula, pe.cedula,pe.nombre, ec.descripcion from
+personas pe, estado_civil ec
+where 
+pe.estado_civil_codigo = ec.codigo
+and pe.nombre like 'G%'
 
 
 
