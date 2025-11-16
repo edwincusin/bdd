@@ -59,7 +59,6 @@ values ('12340','1753081050','2022-08-21',200),
 		
 select * from usuario;
 select * from cuentas;
-select * from usuario, cuentas;
 --delete from cuentas;
 
 
