@@ -184,6 +184,77 @@ pe.estado_civil_codigo = ec.codigo
 and pe.nombre like 'G%'
 
 
+---------------AGREGACION --------------------------------------------------
+---------------OPERACIONES SOBRE UN CONJUNTO DE RESULTADOS------------------
+--COUNT
+
+select count(cedula) as contador from personas 
+select count(1) as contador from personas
+select count(*) as contador from personas 
+
+
+select count(apellido) 
+from personas
+where personas.estado_civil_codigo ='C'
+
+select count(ec.codigo)
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and per.estado_civil_codigo ='C'
+
+
+--AVG - PROMEDIO -- NOS PERMITE SACAR EL PROMEDIO
+
+select avg(estatura) as "promedio estatura"
+from personas
+
+
+select avg(cast(cantidad_ahorrada as numeric))
+from personas
+
+
+select avg(cast(cantidad_ahorrada as numeric))
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and per.estado_civil_codigo ='C'
+
+
+--SUM, MAX, MIN --- MAXIMO, MINIMO, SUMA
+select SUM(cast(cantidad_ahorrada as numeric))
+from personas
+
+select MAX(cast(cantidad_ahorrada as numeric))
+from personas
+
+select MIN(cast(cantidad_ahorrada as numeric))
+from personas
+
+select SUM(cast(cantidad_ahorrada as numeric))
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and per.estado_civil_codigo ='C'
+
+
+--GROUP BY -- PARA AGRUPAR  se agrega la funcion de contar
+select estado_civil_codigo, count(*) 
+from personas
+group by estado_civil_codigo
+
+select estado_civil_codigo, sum(numero_hijos) 
+from personas
+group by estado_civil_codigo
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
