@@ -39,6 +39,61 @@ create table reservas(
 	constraint reservas_pk primary key (habitacion,huesped_id)
 );
 
+-----------------------------------------------------------------------------------------------
+-----------------------------QUERYS RELACION MUCHOS A MUCHOS ----------------------------------
+
+--CONSULTA 1:
+
+
+--SUBCONSULTA 1:
+
+
+--FUNCION DE AGREGACION 1:
+
+
+---------------------------------------------------------------------
+
+--CONSULTA 2:
+
+
+--SUBCONSULTA 2:
+
+
+--FUNCION DE AGREGACION 2:
+
+
+---------------------------------------------------------------------
+--CONSULTA 3:
+
+
+--SUBCONSULTA 3:
+
+
+--FUNCION DE AGREGACION 3:
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

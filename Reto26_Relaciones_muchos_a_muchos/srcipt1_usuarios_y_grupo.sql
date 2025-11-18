@@ -47,7 +47,7 @@ from usuarios
 where  id IN(select us_id from usuario_grupo where gr_id=1);
 
 
---FUNCION DE AGREGACION 2:
+--FUNCION DE AGREGACION 1:
 select gr.nombre, count(ug.us_id)
 from grupo gr, usuario_grupo ug
 where gr.id=ug.gr_id
@@ -75,15 +75,27 @@ where gr.id = ug.gr_id
 group by gr.nombre
 
 
+----------------------------------------------------
+
+--CONSULTA 3:
+select usr.nombre, grp.fecha_creacion
+from usuarios usr, grupo grp, usuario_grupo usgr
+where usgr.us_id = usr.id and usgr.gr_id = grp.id
+and grp.fecha_creacion 
+between '2020/03/08' and '2022/03/08'
 
 
+--SUBCONSULTA 3:
+select nombre
+from usuarios
+where  id IN(select us_id from usuario_grupo where gr_id=3);
 
 
-
-
-
-
-
+--FUNCION DE AGREGACION 3:
+select gr.descripcion, count(ug.us_id)
+from grupo gr, usuario_grupo ug 
+where gr.id =ug.gr_id
+group by gr.descripcion
 
 
 
