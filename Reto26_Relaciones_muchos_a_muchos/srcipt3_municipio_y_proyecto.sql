@@ -48,34 +48,61 @@ create table proyecto_municipio(
 -----------------------------QUERYS RELACION MUCHOS A MUCHOS ----------------------------------
 
 --CONSULTA 1:
+select mu.nombre,pro.proyecto
+from municipio mu, proyecto pro, proyecto_municipio pm
+where mu.id = pm.municipio_id and pro.id = pm.proyecto_id;
 
 
 --SUBCONSULTA 1:
-
+select proyecto
+from proyecto 
+where id in(
+			select  proyecto_id
+			from proyecto_municipio
+			where municipio_id = 1
+			);
 
 --FUNCION DE AGREGACION 1:
-
+select mu.nombre, count(pm.proyecto_id)
+from municipio mu, proyecto_municipio pm 
+where mu.id = pm.municipio_id
+group by mu.nombre;
 
 ---------------------------------------------------------------------
 
 --CONSULTA 2:
-
-
---SUBCONSULTA 2:
+select mu.nombre, pro.proyecto
+from municipio mu, proyecto pro, proyecto_municipio pm
+where mu.id = pm.municipio_id and pro.id = pm.proyecto_id
+	and mu.nombre ilike '%gad%';
 
 
 --FUNCION DE AGREGACION 2:
-
+select mu.nombre, min(pm.proyecto_id)
+from municipio mu, proyecto_municipio pm
+where mu.id = pm.municipio_id
+group by mu.nombre;
 
 ---------------------------------------------------------------------
 --CONSULTA 3:
-
+select mu.nombre, ci.nombre 
+from municipio mu, ciudad ci
+where mu.ciudad_id = ci.id;
 
 --SUBCONSULTA 3:
-
+select proyecto
+from proyecto 
+where id in(
+				select proyecto_id 
+				from proyecto_municipio
+				where municipio_id = 3
+			);
 
 --FUNCION DE AGREGACION 3:
-
+select mu.nombre, max(pm.proyecto_id)
+from municipio mu, proyecto_municipio pm
+where mu.id = pm.municipio_id
+group by mu.nombre;
 
 ---------------------------------------------------------------------
 
