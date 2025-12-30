@@ -16,7 +16,7 @@ create table persona(
 --PK CEDULA
 --FK CEDULA
 create table prestamo(
-	codigo serial,
+	codigo int not null,
 	cedula char(10), 
 	monto money,
 	fecha_prestamo date,
@@ -45,23 +45,23 @@ values ('1753081050','EDWIN','ANTAMBA',1.75,'23/01/1991','04:00',3000,1),
 		
 
 --INSERT DE LA TABLA PRESTAMO--
-insert into prestamo(cedula, monto, fecha_prestamo,hora_prestamo,garante)
-values('1753081056',500,'15/10/2025','10:00','CARLOS CHIZA'),
-		('1753081056',200,'11/11/2025','11:00','GEOVANY ANT'),
-		('1753081053',300,'12/02/2025','12:00','PEDRO CALAPAQUI'),
-		('1753081054',400,'13/03/2025','13:00','DANIEL LOOR'),
-		('1753081055',500,'14/04/2025','14:00','LADY LOOR'),
-		('1753081057',600,'01/05/2025','15:00','FREDY CASTAÑEDA'),
-		('1753081058',700,'17/06/2025','16:00','EDISON PEREZ'),
-		('1753081059',800,'21/07/2025','13:00','OSCAR TITUAÑA'),
-		('1753081050',900,'25/08/2025','14:00','GABY CORDOBA'),
-		('1753081050',999,'29/09/2025','11:00','SANDRA RAMIREZ');
+insert into prestamo(codigo,cedula, monto, fecha_prestamo,hora_prestamo,garante)
+values(1,'1753081056',500,'15/10/2025','10:00','CARLOS CHIZA'),
+		(2,'1753081056',200,'11/11/2025','11:00','GEOVANY ANT'),
+		(3,'1753081053',300,'12/02/2025','12:00','PEDRO CALAPAQUI'),
+		(4,'1753081054',400,'13/03/2025','13:00','DANIEL LOOR'),
+		(5,'1753081055',500,'14/04/2025','14:00','LADY LOOR'),
+		(6,'1753081057',600,'01/05/2025','15:00','FREDY CASTAÑEDA'),
+		(7,'1753081058',700,'17/06/2025','16:00','EDISON PEREZ'),
+		(8,'1753081059',800,'21/07/2025','13:00','OSCAR TITUAÑA'),
+		(9,'1753081050',900,'25/08/2025','14:00','GABY CORDOBA'),
+		(10,'1753081050',999,'29/09/2025','11:00','SANDRA RAMIREZ');
 
 
 
 select *from persona;
 select * from prestamo;
 
---delete from prestamo 
+drop table persona;
 
---drop table prestamo
+drop table prestamo;

@@ -53,3 +53,6 @@ values (1,3,'TRANS1'),
 
 select * from transacciones;
 select * from banco;
+
+drop table banco;
+drop table transacciones;
